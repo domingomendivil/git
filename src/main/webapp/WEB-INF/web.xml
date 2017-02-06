@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+	<servlet>
+		<servlet-name>GitServlet</servlet-name>
+		<servlet-class>git.GitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GitServlet</servlet-name>
+		<url-pattern>/GitServlet</url-pattern>
+	</servlet-mapping>
 </web-app>
