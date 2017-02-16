@@ -1,8 +1,10 @@
-package git.rest;
+package git.api;
 
+import git.api.async.OnFlightsFound;
+import git.api.async.OnPayment;
+import git.domain.FlightsResult;
 import git.domain.User;
-import git.rest.async.OnFlightsFound;
-import git.rest.async.OnPayment;
+
 
 public interface Api {
 	
@@ -18,6 +20,11 @@ public interface Api {
 	public void onFlightsFound(OnFlightsFound onFlights);
 	
 	public void onPayment(OnPayment onPayment);
+
+	public String signIn(String user,String password);
 	
+	public String validateSocialLogin(int socialLogin,String token);
+
+	public FlightsResult searchFlights(SearchFlightsInput input);
 	
 }

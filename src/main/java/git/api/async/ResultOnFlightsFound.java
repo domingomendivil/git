@@ -1,4 +1,4 @@
-package git.rest.async;
+package git.api.async;
 
 public class ResultOnFlightsFound {
 

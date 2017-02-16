@@ -1,4 +1,4 @@
-package git.rest;
+package git.api;
 
 public class BusinessException extends RuntimeException{
 
