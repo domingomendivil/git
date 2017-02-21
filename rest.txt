@@ -1,2 +1,75 @@
 
 
+	1) ADD SOCIAL LOGIN
+
+	POST	/sociallogins/google
+	POST	/sociallogins/facebook
+	POST	/sociallogins/linkedin
+	
+	
+	2) GET SOCIAL LOGIN INFORMATION
+	
+	
+	GET		/sociallogins/google
+	
+	
+	{id: xxx 
+	 picture: /sociallogins/google/picture
+	 email: domingo.mendivil@gmail.com
+	 token: asdasdl-asd-asdasd
+	 }
+	 
+	
+	GET SOCIAL LOGIN PICTURE
+	
+	
+	GET		/sociallogins/facebook
+	GET		/sociallogins/linkedin
+	
+	GET		/profile
+	
+	
+	3) SIGN IN:
+	
+	Authorization:	Bearer	234234AASDF	
+	GET		/login	
+	REPONSE:	200 OK
+	
+	
+	Authorization:	Bearer	234234AASDF
+		
+	4) CHANGE PASSWORD:
+	
+	POST	/password/change
+	
+	{oldPassword:
+	 newPassword:
+	 repeatPassword:}
+	 
+	5) RESET PASSWORD:
+	
+	POST	/password/reset
+	
+	
+	 
+	 
+	
+	6) SEARCH FLIGHTS:
+	
+	GET		/flights?fromDate=2007-02-01&returnDate=2007-02-02&iataFrom=MVD&iataTto=JFK%nroPassengers=2
+	GET		/flights?fromDate=2007-02-01&iataFrom=MVD&iataTto=JFK%nroPassengers=2&
+	
+		
+	7) SIGN UP
+	
+	POST 	/profile/add
+	
+	GET		/users/email
+	
+	
+	
+	GET		/users/id
+	
+	
+	
+	

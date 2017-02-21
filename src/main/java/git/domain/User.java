@@ -1,5 +1,7 @@
 package git.domain;
 
+import java.util.List;
+
 public class User {
 	
 
@@ -8,6 +10,7 @@ public class User {
 	
 	private String id;
 	
+	private List<SocialLogin> socialLogin;
 	
 	
 	public String getId() {
@@ -23,6 +26,12 @@ public class User {
 		this.email = email;
 	}
 	
+	public List<SocialLogin> getSocialLogin() {
+		return socialLogin;
+	}
+	public void setSocialLogin(List<SocialLogin> socialLogin) {
+		this.socialLogin = socialLogin;
+	}
 	public String getPassword() {
 		return password;
 	}
