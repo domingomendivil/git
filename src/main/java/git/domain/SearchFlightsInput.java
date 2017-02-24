@@ -1,4 +1,4 @@
-package git.api;
+package git.domain;
 
 import java.util.Date;
 

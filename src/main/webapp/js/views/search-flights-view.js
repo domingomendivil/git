@@ -13,7 +13,7 @@ var app = app || {};
 		tagName:  'li',
 
 		// Cache the template function for a single item.
-		template: _.template($('#item-template').html()),
+		//template: _.template($('#item-template').html()),
 
 		// The DOM events specific to an item.
 		events: {
@@ -47,8 +47,17 @@ var app = app || {};
 			if (this.model.changed.id !== undefined) {
 				return;
 			}
-
-			this.$el.html(this.template(this.model.toJSON()));
+			
+			 $.get('templates/item-template.html', function (data) {
+				 	alert('obtenido');
+			        template = _.template(data, {
+			             data: data_you_want_to_pass_to_template
+			        });
+			        alert("template obtenido");
+			        window.alert('template '+template);
+			        this.$el.html(this.template(this.model.toJSON()));  
+			    }, 'html');
+			//this.$el.html(this.template(this.model.toJSON()));
 			this.$el.toggleClass('completed', this.model.get('completed'));
 			this.toggleVisible();
 			this.$input = this.$('.edit');

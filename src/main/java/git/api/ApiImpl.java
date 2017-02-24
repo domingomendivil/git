@@ -1,12 +1,28 @@
 package git.api;
 
+import java.util.List;
+
 import git.api.async.OnFlightsFound;
 import git.api.async.OnPayment;
 import git.dao.DAO;
 import git.domain.FlightsResult;
+import git.domain.SearchFlightsInput;
 import git.domain.User;
 import git.email.EMail;
-import git.security.SecurityValidator;
+import git.flightsapi.Airport;
+import git.flightsapi.FlightsApi;
+import git.payments.PaymentApi;
+import git.security.IdentityAccessManager;
+
+
+
+//BE01000	- Password cannot be null
+//BE01001	- Password and repetition are not the same
+//BE01002	- Password does not meet policy
+//BE01003	- Password cannot be the same, as the actual password
+//BE01004	- Password does not meet policy
+//BE01005	- Actual password is not correct
+
 
 public class ApiImpl implements Api{
 	
@@ -14,7 +30,11 @@ public class ApiImpl implements Api{
 	
 	private EMail email;
 	
-	private SecurityValidator validator;
+	private FlightsApi flightsApi;
+	
+	private PaymentApi paymentApi;
+	
+	private IdentityAccessManager identityAccessManager;
 	
 	
 
@@ -31,7 +51,7 @@ public class ApiImpl implements Api{
 	}
 
 	@Override
-	public void resetPassword(String userId,String password, String repeatPassword)  {
+	public void resetPassword(String user,String currentpassword,String password, String repeatPassword)  {
 		// TODO Auto-generated method stub
 		throw new BusinessException();
 		
@@ -70,6 +90,12 @@ public class ApiImpl implements Api{
 	@Override
 	public FlightsResult searchFlights(SearchFlightsInput input) {
 		
+		return null;
+	}
+
+	@Override
+	public List<Airport> searchAirportsAutoComplete(String term, String country, boolean includeAll) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

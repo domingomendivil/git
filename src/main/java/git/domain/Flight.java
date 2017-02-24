@@ -1,8 +1,15 @@
 package git.domain;
 
+import java.util.Date;
+
 public class Flight {
 	private String iataFrom;
 	private String iataTo;
+	private String airCraft;
+	private String flight_number;
+	private Date departsAt;
+	private Date arrivesAt;
+	private BookingInfo bookingInfo;
 	public String getIataFrom() {
 		return iataFrom;
 	}

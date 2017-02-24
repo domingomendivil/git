@@ -71,6 +71,14 @@
 	GET		/users/id
 	
 	
+	7) SEARCH AIRPORT AUTOCOMPLETE:
+	
+	GET	/airports/autocomplete
+	
+	
+	
+	
+	
 	
 	
 http://danialk.github.io/blog/2013/07/28/advanced-security-in-backbone-application/

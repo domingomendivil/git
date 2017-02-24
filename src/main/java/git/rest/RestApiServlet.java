@@ -2,6 +2,7 @@ package git.rest;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
@@ -18,9 +19,10 @@ import org.glassfish.jersey.media.sse.OutboundEvent;
 import org.glassfish.jersey.media.sse.SseFeature;
 
 import git.api.Api;
-import git.api.SearchFlightsInput;
 import git.domain.FlightsResult;
+import git.domain.SearchFlightsInput;
 import git.domain.User;
+import git.flightsapi.Airport;
 
 public class RestApiServlet {
 
@@ -48,6 +50,10 @@ public class RestApiServlet {
 		return api.searchFlights(input);
 	}
 	
+	
+	public List<Airport> searchAirportsAutoComplete(@QueryParam("term")String term, @QueryParam("country")String country,@QueryParam("includeAll")boolean includeAll ){
+		return api.searchAirportsAutoComplete(term,country,includeAll);
+	}
 	
 	
 	

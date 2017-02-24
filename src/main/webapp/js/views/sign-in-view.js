@@ -8,7 +8,7 @@ var app = app || {};
 	// ---------------
 
 	// Our overall **AppView** is the top-level piece of UI.
-	app.AppView = Backbone.View.extend({
+	app.SignInView = Backbone.View.extend({
 
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
@@ -61,6 +61,7 @@ var app = app || {};
 					completed: completed,
 					remaining: remaining
 				}));
+
 				this.$('.filters li a')
 					.removeClass('selected')
 					.filter('[href="#/' + (app.TodoFilter || '') + '"]')
@@ -76,7 +77,6 @@ var app = app || {};
 		// Add a single todo item to the list by creating a view for it, and
 		// appending its element to the `<ul>`.
 		addOne: function (todo) {
-			
 			var view = new app.SearchFlightsView({ model: todo });
 			this.$list.append(view.render().el);
 		},
