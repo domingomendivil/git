@@ -17,7 +17,7 @@ import git.email.EMail;
 import git.security.IdentityAccessManager;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ApiImplTestResetPassword {
+public class ApiImplTestChangePassword {
 	
 	@Mock
 	private DAO dao;
@@ -34,43 +34,43 @@ public class ApiImplTestResetPassword {
 	
  
 	@Test(expected=BusinessException.class)
-	public void testResetPassword1(){
+	public void testchangePassword1(){
 		try{
-			api.resetPassword("user1","pepe","","");
+			api.changePassword("user1","pepe","","");
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01000",e.getErrorNro());
 		}
 	}
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword2(){
+	public void testchangePassword2(){
 		try{
-			api.resetPassword("user1","pepe","","as");
+			api.changePassword("user1","pepe","","as");
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01001",e.getErrorNro());
 		}
 	}
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword3(){
+	public void testchangePassword3(){
 		try{		
-			api.resetPassword("user1","pepe","df","as");
+			api.changePassword("user1","pepe","df","as");
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01001",e.getErrorNro());
 		}
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void testResetPassword4(){
-		api.resetPassword("user1","pepe",null,null);
+	public void testchangePassword4(){
+		api.changePassword("user1","pepe",null,null);
 	}
 	
 	
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword5(){
+	public void testchangePassword5(){
 		try{
-			api.resetPassword("user1","pepe","as","as");	
+			api.changePassword("user1","pepe","as","as");	
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01004",e.getErrorNro());
 		}
@@ -78,25 +78,25 @@ public class ApiImplTestResetPassword {
 
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword6(){
-		api.resetPassword("user1","pepe","asdfgs1","asdfgs1");
+	public void testchangePassword6(){
+		api.changePassword("user1","pepe","asdfgs1","asdfgs1");
 		verify(email).sendEMail("", "", "Su contraseña ha sido cambiada");
 		verify(identityAccessManager).changePassword("","pepe","asdfgs1", "asdfgs1");
 	}
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword8(){
+	public void testchangePassword8(){
 		try{
-			api.resetPassword("user1","pepe",null,null);
+			api.changePassword("user1","pepe",null,null);
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01000",e.getErrorNro());
 		}
 	}
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword9(){
+	public void testchangePassword9(){
 		try{
-			api.resetPassword("user1","",null,null);
+			api.changePassword("user1","",null,null);
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01000",e.getErrorNro());
 		}
@@ -104,9 +104,9 @@ public class ApiImplTestResetPassword {
 	
 	
 	@Test(expected=BusinessException.class)
-	public void testResetPassword10(){
+	public void testchangePassword10(){
 		try{
-			api.resetPassword("user1","pepe","pepe","pepe");	
+			api.changePassword("user1","pepe","pepe","pepe");	
 		}catch(BusinessException e){
 			Assert.assertEquals("BE01004",e.getErrorNro());
 		}

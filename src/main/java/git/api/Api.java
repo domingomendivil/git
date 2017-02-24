@@ -17,7 +17,9 @@ public interface Api {
 	
 	public String signUp(User user);
 	
-	public void resetPassword(String userId,String currentPassword,String password,String repeatPassword);
+	public void changePassword(String userId,String currentPassword,String password,String repeatPassword);
+	
+	public void resetPassword(String userId,String email);
 	
 	public void signOut(String username,String token);
 	

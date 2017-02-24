@@ -51,9 +51,12 @@ public class ApiImpl implements Api{
 	}
 
 	@Override
-	public void resetPassword(String user,String currentpassword,String password, String repeatPassword)  {
-		// TODO Auto-generated method stub
-		throw new BusinessException();
+	public void changePassword(String user,String currentPassword,String password, String repeatPassword)  {
+		identityAccessManager.changePassword(user, currentPassword, password, repeatPassword);
+	}
+	
+	@Override
+	public void resetPassword(String user,String email)  {
 		
 	}
 
