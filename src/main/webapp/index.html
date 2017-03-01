@@ -26,6 +26,8 @@
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list"></ul>
 			</section>
+			
+			
 			<footer class="footer"></footer>
 		</section>
 		<footer class="info">
@@ -33,6 +35,12 @@
 			<p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
+		 <script type="text/template" id="flight-template">
+			<table><tr>
+				<td><%=flight.nro%></td>
+			</tr></table>
+		</script> 
+		
 		 <script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
@@ -66,6 +74,8 @@
 		<script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
 		<script src="js/models/todo.js"></script>
 		<script src="js/collections/todos.js"></script>
+		<script src="js/models/flight.js"></script>
+		<script src="js/collections/flights.js"></script>
 		<script src="js/views/todo-view.js"></script>
 		<script src="js/views/app-view.js"></script>
 		<script src="js/views/search-flights-view.js"></script>

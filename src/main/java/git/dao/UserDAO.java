@@ -11,7 +11,7 @@ public class UserDAO {
 	private  EntityManager em;
 	
 	public UserDAO(){
-		 EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+		 EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
 		 em = emf.createEntityManager();
 	}
 	

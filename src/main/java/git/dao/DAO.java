@@ -8,6 +8,7 @@ public interface DAO {
 	
 	public List<Object> getByFilter(DAOFilter filter);
 	
+	public Object getById(Object id);
 	
 
 }

@@ -1,6 +1,6 @@
 package git.dao;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import git.domain.User;
@@ -28,7 +28,7 @@ public class UserDAOTest {
 	@Test
 	public void testGetById2() throws ObjectNotFoundException{
 		User user = new UserDAO().getById("1232");
-		Assert.assertEquals("1232",user.getId());
+		assertEquals("1232",user.getId());
 	}
 	
 	@Test(expected=IllegalArgumentException.class)

@@ -1,5 +1,10 @@
 package git.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="SOCIALLOGIN")
 public class SocialLogin {
 	private User user;
 	private Integer id;

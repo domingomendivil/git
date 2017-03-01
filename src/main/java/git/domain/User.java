@@ -2,22 +2,28 @@ package git.domain;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="USERS")
 public class User {
 	
-
 	private String password;
 	private String email;
 	
-	private String id;
+	@Id
+	private String userName;
 	
 	private List<SocialLogin> socialLogin;
 	
 	
 	public String getId() {
-		return id;
+		return userName;
 	}
 	public void setId(String id) {
-		this.id = id;
+		this.userName = id;
 	}
 	public String getEmail() {
 		return email;
@@ -42,7 +48,7 @@ public class User {
 	
 	@Override
 	public int hashCode() {
-		return id.hashCode();
+		return userName.hashCode();
 	}
 	
 	
@@ -53,8 +59,8 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (other.id != null){
-			if (id.equals(other.id)){
+		if (other.userName != null){
+			if (userName.equals(other.userName)){
 				return true;
 			}
 		}

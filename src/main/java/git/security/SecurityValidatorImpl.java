@@ -1,6 +1,10 @@
 package git.security;
 
+import git.dao.DAO;
+
 public class SecurityValidatorImpl implements IdentityAccessManager{
+	
+	private DAO dao;
 
 	@Override
 	public boolean validate(String user, String password) {

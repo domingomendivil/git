@@ -109,6 +109,7 @@ var app = app || {};
 		createOnEnter: function (e) {
 			if (e.which === ENTER_KEY && this.$input.val().trim()) {
 				app.todos.create(this.newAttributes());
+				app.flights.create(this.newAttributes());
 				this.$input.val('');
 			}
 		},

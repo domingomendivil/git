@@ -15,6 +15,12 @@ public class DAOImpl implements DAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Object getById(Object id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
