@@ -12,9 +12,9 @@ import org.mockito.runners.MockitoJUnitRunner;
 import git.api.ApiImpl;
 import git.api.BusinessException;
 import git.dao.DAO;
-import git.domain.User;
 import git.email.EMail;
 import git.security.IdentityAccessManager;
+import git.security.IdentityAccessManagerException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ApiImplTestChangePassword {
@@ -78,7 +78,7 @@ public class ApiImplTestChangePassword {
 
 	
 	@Test(expected=BusinessException.class)
-	public void testchangePassword6(){
+	public void testchangePassword6() throws IdentityAccessManagerException{
 		api.changePassword("user1","pepe","asdfgs1","asdfgs1");
 		verify(email).sendEMail("", "", "Su contraseña ha sido cambiada");
 		verify(identityAccessManager).changePassword("","pepe","asdfgs1", "asdfgs1");

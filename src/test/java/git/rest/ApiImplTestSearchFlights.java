@@ -15,6 +15,7 @@ import org.junit.Test;
 import git.api.ApiImpl;
 import git.dao.DAO;
 import git.dao.FlightsFilter;
+import git.dao.ObjectNotFoundException;
 import git.domain.Flight;
 import git.domain.FlightsResult;
 import git.domain.SearchFlightsInput;
@@ -89,7 +90,7 @@ public class ApiImplTestSearchFlights {
 	}
 	
 	@Test
-	public void testSearchFlights7() throws ParseException{
+	public void testSearchFlights7() throws ParseException, ObjectNotFoundException{
 		SearchFlightsInput input = new SearchFlightsInput();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		input.setDateFrom(dateFormat.parse("2012-03-01"));
@@ -108,7 +109,7 @@ public class ApiImplTestSearchFlights {
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void testSearchFlights8() throws ParseException{
+	public void testSearchFlights8() throws ParseException, ObjectNotFoundException{
 		SearchFlightsInput input = new SearchFlightsInput();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		input.setDateFrom(dateFormat.parse("2012-03-01"));
@@ -127,7 +128,7 @@ public class ApiImplTestSearchFlights {
 	}
 	
 	@Test 
-	public void testSearchFlights9() throws ParseException{
+	public void testSearchFlights9() throws ParseException, ObjectNotFoundException{
 		SearchFlightsInput input = new SearchFlightsInput();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		input.setDateFrom(dateFormat.parse("2012-03-01"));
@@ -149,7 +150,7 @@ public class ApiImplTestSearchFlights {
 	}
 	
 	@Test 
-	public void testSearchFlights10() throws ParseException{
+	public void testSearchFlights10() throws ParseException, ObjectNotFoundException{
 		SearchFlightsInput input = new SearchFlightsInput();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		input.setDateFrom(dateFormat.parse("2012-03-01"));

@@ -27,8 +27,8 @@ public class UserDAOTest {
 	
 	@Test
 	public void testGetById2() throws ObjectNotFoundException{
-		User user = new UserDAO().getById("1232");
-		assertEquals("1232",user.getId());
+		User user = new UserDAO().getById("domin1232");
+		assertEquals("domin1232",user.getId());
 	}
 	
 	@Test(expected=IllegalArgumentException.class)

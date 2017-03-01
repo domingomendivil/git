@@ -1,7 +1,5 @@
 package git.domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,12 +9,10 @@ import javax.persistence.Table;
 public class User {
 	
 	private String password;
-	private String email;
 	
 	@Id
 	private String userName;
 	
-	private List<SocialLogin> socialLogin;
 	
 	
 	public String getId() {
@@ -25,19 +21,7 @@ public class User {
 	public void setId(String id) {
 		this.userName = id;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
-	public List<SocialLogin> getSocialLogin() {
-		return socialLogin;
-	}
-	public void setSocialLogin(List<SocialLogin> socialLogin) {
-		this.socialLogin = socialLogin;
-	}
 	public String getPassword() {
 		return password;
 	}

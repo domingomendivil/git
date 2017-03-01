@@ -13,6 +13,7 @@ import git.flightsapi.Airport;
 import git.flightsapi.FlightsApi;
 import git.payments.PaymentApi;
 import git.security.IdentityAccessManager;
+import git.security.IdentityAccessManagerException;
 
 
 
@@ -52,7 +53,12 @@ public class ApiImpl implements Api{
 
 	@Override
 	public void changePassword(String user,String currentPassword,String password, String repeatPassword)  {
-		identityAccessManager.changePassword(user, currentPassword, password, repeatPassword);
+		try{
+			identityAccessManager.changePassword(user, currentPassword, password, repeatPassword);	
+		}catch(IdentityAccessManagerException e){
+			throw new BusinessException(e.getErrorNro());
+		}
+		
 	}
 	
 	@Override

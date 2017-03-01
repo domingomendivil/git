@@ -2,6 +2,8 @@ package git.domain;
 
 import java.util.Date;
 
+import javax.persistence.Table;
+
 public class Flight {
 	private String iataFrom;
 	private String iataTo;

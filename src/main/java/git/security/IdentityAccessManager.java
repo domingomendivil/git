@@ -6,6 +6,6 @@ public interface IdentityAccessManager {
 	
 	public boolean validateSocial(String socialLogin,String token);
 	
-	public void changePassword(String user,String currentPassword,String newPassword,String repeatPassword);
+	public void changePassword(String user,String currentPassword,String newPassword,String repeatPassword) throws IdentityAccessManagerException;
 
 }

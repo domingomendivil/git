@@ -1,5 +1,6 @@
 package git.rest;
 
+
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
@@ -7,11 +8,14 @@ import java.util.List;
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 import org.glassfish.jersey.media.sse.EventOutput;
@@ -38,6 +42,15 @@ public class RestApiServlet {
 	public User getUser() {
 		Principal principal = securityContext.getUserPrincipal();
 		return api.getUser(principal.getName());
+	}
+	
+	@GET
+	@Path("/profile/password/change")
+	@RolesAllowed({ "Administrator", "Customer" })
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response changePassword() {
+		Principal principal = securityContext.getUserPrincipal();
+		return api.changePassword(userId, currentPassword, password, repeatPassword);
 	}
 
 	@GET

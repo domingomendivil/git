@@ -1,5 +1,8 @@
 package git.dao;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -22,8 +25,23 @@ public class UserDAO {
 	}
 
 	public User getById(String username) throws ObjectNotFoundException{
+		if (!validUser(username))
+			throw new IllegalArgumentException();
          User user = em.find(User.class, username);
+         if (user==null)
+        	 throw new ObjectNotFoundException();
          return user;
+	}
+
+	private boolean validUser(String username) {
+		if (username==null)
+			return false;
+		else{
+			 String pattern = "([a-zA-Z0-9]){4,}";
+			 Pattern r = Pattern.compile(pattern);
+			 Matcher m = r.matcher(username);
+			 return m.matches();
+		}
 	}
 
 }

@@ -40,7 +40,7 @@
 		
 	4) CHANGE PASSWORD:
 	
-	POST	/password/change
+	POST	/profile/password/change
 	
 	{oldPassword:
 	 newPassword:

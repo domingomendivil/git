@@ -41,6 +41,8 @@ public class RestIT {
 	
 	//Si el usuario no esá logueado, devuelve NOT AUTHENTICATED
 	
+	
+	
 	//Si el esá logueado, pero no existe google sociallogin devuelve NOT FOUND
 	
 	//Si el esá logueado, pero no existe facebook sociallogin devuelve NOT FOUND
@@ -48,6 +50,8 @@ public class RestIT {
 	
 	//FLIGHTS
 	
+	
+	//CHANGE PASSWORD
 	
 	
 	
