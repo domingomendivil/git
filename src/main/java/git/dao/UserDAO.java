@@ -8,18 +8,22 @@ import git.domain.User;
 
 public class UserDAO {
 	
+	private  EntityManager em;
+	
+	public UserDAO(){
+		 EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
+		 em = emf.createEntityManager();
+	}
+	
 	public void insert(User user){
-		  EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
-          EntityManager em = emf.createEntityManager();
           em.getTransaction().begin();
           em.persist(user);
           em.getTransaction().commit();
 	}
 
 	public User getById(String username) throws ObjectNotFoundException{
-		// TODO Auto-generated method stub
-		return null;
-		
+         User user = em.find(User.class, username);
+         return user;
 	}
 
 }
